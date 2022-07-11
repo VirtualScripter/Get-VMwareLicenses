@@ -79,9 +79,9 @@ function Get-VMwareLicenses
                     $details.ExpirationDate = "Never"
                 }
                 $licenseDetails += $details
-                $ErrorActionPreference = "Continue"
-                Return $licenseDetails
             }
+           $ErrorActionPreference = "Continue"
+           Return $licenseDetails
         }
         catch 
         {
@@ -351,27 +351,27 @@ function Get-VMwareLicenses
     {
         "vCenter" 
         {
-            $results = Get-vCenterLicensing $server $user $pw
+            $results = Get-vCenterLicensing $server $user $password
         }
         "vROps" 
         {
-            $results = Get-vROPsLicensing $server $user $pw
+            $results = Get-vROPsLicensing $server $user $password
         }
         "LogInsight" 
         {
-            $results = Get-LogInsightLicensing $server $user $pw
+            $results = Get-LogInsightLicensing $server $user $password
         }
         "NSX" 
         {
-            $results = Get-NSXLicensing $server $user $pw
+            $results = Get-NSXLicensing $server $user $password
         }
         "vRA" 
         {
-            $results = Get-vRALicensing $server $user $pw
+            $results = Get-vRALicensing $server $user $password
         }
         "Horizon"
         {
-            $results = Get-HorizonLicensing $server $user $pw
+            $results = Get-HorizonLicensing $server $user $password
         }
     }
     Return $results
